@@ -24,3 +24,6 @@ var iImage=Math.floor(Math.random() * 10);
 // setInterval(function, ms) 每毫秒數呼叫 
 // setTimeout(function, ms) 毫秒數後呼叫函式
 // setTimeout(function(){setImage(i)}, 1000);  如果function裡需要放參數
+
+let 只適用於{ }中
+var 的有效區域為整個function以下
