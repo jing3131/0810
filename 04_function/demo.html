@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function truefalse(count){
+            if(count<=0 || count>21 || count==4) return 0;
+        }
+
+        function showStar(count, msg= "*"){
+            // if(count<0) return "count < 0";                
+            // else if(count > 21) return "count > 21";
+            // else if(count = 4) return "count cannot be 4";
+
+            //if(count<=0 || count>21 || count==4) return "should be 1-20 ,and not be 4";
+
+            
+            if(truefalse(count) != 0){
+                let star="";
+                for(let i=1; i<=count; i++){
+                    star += msg;
+                }
+                return star;
+            }
+            else{
+                return "should be 1-20 ,and not be 4";
+
+            }
+            
+        }
+        alert(showStar(-6,"X"));
+
+        
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dynamic Image Lab</title>
+</head>
+<body>
+
+<p>...</p>
+
+<!-- 
+TODO:
+請檢視以下這段 HTML，設計師用 <a> 與 <img> 做了
+一個圖片式的超連結，目前固定連往運動家隊。
+
+請想想看 ：如何讓訪客造訪本頁時，隨機看到不同的
+球隊圖案（超連結也要一併對應唷）。 
+-->
+
+<a id="imgshref" href="http://oakland.athletics.mlb.com/" target="_blank">
+  <img src="images/oak.gif" id="imgs" border="0" />
+</a>
+
+<script>
+  function setImg(){
+    var img=new Array();
+    var url=new Array();
+    img[0]="images/chc.gif"; url[0]="http://chicago.cubs.mlb.com/";
+    img[1]="images/oak.gif"; url[1]="http://oakland.athletics.mlb.com/";
+    img[2]="images/sd.gif"; url[2]="http://sandiego.padres.mlb.com/";
+    img[3] = "images/was.gif";	url[3] = "http://washington.nationals.mlb.com/";
+
+    var iImage=Math.floor(Math.random() * img.length);
+    // 原本Math.random()為隨機產生不大於1的小數，floor為無條件捨去(高斯)
+    // 一個小於1的數字*4，依然不大於4
+    // 相減就是平移
+    document.getElementById("imgs").src=img[iImage];
+    document.getElementById("imgshref").src=url[iImage];
+  }
+
+  setInterval(setImg,1000);
+  // setInterval(function, ms) 每毫秒數呼叫 
+  // setTimeout(function, ms) 毫秒數後呼叫函式
+</script>
+
+
+<p>...</p>
+</body>
+</html>
