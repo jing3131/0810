@@ -1,0 +1,26 @@
+設置在function外的為全域變數
+在function裡不宣告任何型態(var const let 也為全域變數)
+window. -> 呼叫全域變數
+
+
+var dataList = [10, 20, 30];
+for(var data of dataList){              // 列出內容
+     alert(data);
+}
+
+for(var data in dataList){              // 列出 index
+    alert(data);
+}
+
+if (typeof data === "undefined") {              // typeof 一個變數的型態(回傳字串)
+    continue;
+}
+
+var iImage=Math.floor(Math.random() * 10);
+// 原本Math.random()為隨機產生不大於1的小數，floor為無條件捨去(高斯)
+// 一個小於1的數字*10，依然不大於10
+/／ 相減就是平移
+
+// setInterval(function, ms) 每毫秒數呼叫 
+// setTimeout(function, ms) 毫秒數後呼叫函式
+// setTimeout(function(){setImage(i)}, 1000);  如果function裡需要放參數
