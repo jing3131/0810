@@ -24,7 +24,10 @@ test.onclick = function () {
     var data = [3, 0, 1, 8, 7, 2, 5, 4, 9, 6];
 
     // 你的任務程式...
-    
+    // filter 濾出，把要的挑出來
+    var data1=data.filter(items => (items % 2 == 0));
+
+    report.innerText=data1.join(" ");
 
     
 

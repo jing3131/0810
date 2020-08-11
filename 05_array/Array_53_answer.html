@@ -25,12 +25,13 @@ test.onclick = function () {
     var data = [3, 0, 1, 8, 7, 2, 5, 4, 9, 6];
     
     // 你的任務程式:
+    // return x-y;     > 0 前面比較大，類推
     data.sort(function (x, y) {
         console.log(x, y);
         if (x == 2)
-            return 1
+            return 1        // 不管y是多少，x都會比較大
         else if (y == 2)
-            return -1
+            return -1       // 不管x是多少，y都會比較大
         else
             return x - y;
     });

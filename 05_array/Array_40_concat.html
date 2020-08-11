@@ -24,8 +24,12 @@ test.onclick = function () {
     var oddNumber = [1, 3, 5, 7, 9];
 
     // 你的任務程式...
-
     
+    // 把兩個陣列內容合併
+    // var dataconcat=evenNumber.concat(oddNumber);     
+    var dataconcat=[...evenNumber,...oddNumber];        // ... -> 把所有陣列內容取出來
+
+    report.innerText=dataconcat.join(" ");
 
 
 }  // end of test.onclick

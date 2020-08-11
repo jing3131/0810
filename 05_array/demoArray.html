@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="debug"></div>
+
+<script>
+    let dataList =[0,1,2,3];
+    dataList.shift();           // 從前面移除
+    dataList.unshift(7);        // 在前面新增進去
+
+    dataList.pop();
+    dataList.push(4);
+
+    dataList.splice(1,0,8,9);       // 從下標n的位置，刪除m個，後面的都是將新值放入
+    // 如果不刪除任一值，就會在前面插入新值，將原有的往後擠
+    
+    // debug.innerText=dataList.tostring();
+    debug.innerText=dataList.join(" ， ");   // 把一個陣列逐一用(" ")內的符號分隔
+
+</script>
+
+    
+</body>
+</html>

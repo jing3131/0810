@@ -26,7 +26,15 @@ test.onclick = function () {
 
     // 你的任務程式...
     
-    
+    data.forEach(function(items) {          // Array 使用 forEach 套用 function 至所有 data值(items)
+        console.log(items);                 // console.log() 除錯工具
+        sum += items;
+    });
+
+    /*
+    for(let i=0;i<data.length;i++){
+        sum+=data[i];
+    } */
     
 
     report.innerText = sum;

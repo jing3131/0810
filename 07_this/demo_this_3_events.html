@@ -27,43 +27,43 @@
 
     <script>
 
-        // capture phrase:
-        document.addEventListener("click", function (e) {
-            debug.innerHTML += "document click (capture): "
-                + "event.target.id: " + e.target.id + ", "
-                + "event.target.tagName: " + e.target.tagName + ", "
-                + "this id: " + this.id + ", "
-                + "this tagName: " + this.tagName
-                + "<br>"
-        }, true);
+        // capture phrase:                                          // 捕捉階段 (由外而內)
+        // document.addEventListener("click", function (e) {  
+        //     debug.innerHTML += "document click (capture): "
+        //         + "event.target.id: " + e.target.id + ", "
+        //         + "event.target.tagName: " + e.target.tagName + ", "
+        //         + "this id: " + this.id + ", "
+        //         + "this tagName: " + this.tagName
+        //         + "<br>"
+        // }, true);
 
-        box.addEventListener("click", function (e) {
-            debug.innerHTML += "box click (capture): "
-                + "event.target.id: " + e.target.id + ", "
-                + "event.target.tagName: " + e.target.tagName + ", "
-                + "this id: " + this.id + ", "
-                + "this tagName: " + this.tagName
-                + "<br>"
-        }, true);
+        // box.addEventListener("click", function (e) {
+        //     debug.innerHTML += "box click (capture): "
+        //         + "event.target.id: " + e.target.id + ", "
+        //         + "event.target.tagName: " + e.target.tagName + ", "
+        //         + "this id: " + this.id + ", "
+        //         + "this tagName: " + this.tagName
+        //         + "<br>"
+        // }, true);
 
-        letter.addEventListener("click", function (e) {
-            debug.innerHTML += "letter click (capture): "
-                + "event.target.id: " + e.target.id + ", "
-                + "event.target.tagName: " + e.target.tagName + ", "
-                + "this id: " + this.id + ", "
-                + "this tagName: " + this.tagName
-                + "<br>"
-        }, true);
+        // letter.addEventListener("click", function (e) {
+        //     debug.innerHTML += "letter click (capture): "
+        //         + "event.target.id: " + e.target.id + ", "
+        //         + "event.target.tagName: " + e.target.tagName + ", "
+        //         + "this id: " + this.id + ", "
+        //         + "this tagName: " + this.tagName
+        //         + "<br>"
+        // }, true);
 
 
 
-        // bubble phrase:
-        document.addEventListener("click", function (e) {
+        // bubble phrase:                                               // 由內而外
+        document.addEventListener("click", function (e) {               // onclick = on.click = addEventListener("",function(){})
             debug.innerHTML += "document click (bubble): "
                 + "event.target.id: " + e.target.id + ", "
                 + "event.target.tagName: " + e.target.tagName + ", "
                 + "this id: " + this.id + ", "
-                + "this tagName: " + this.tagName
+                + "this tagName: " + this.tagName                       // this -> 正在處理的事件的物件
                 + "<br>"
         }, false);
 

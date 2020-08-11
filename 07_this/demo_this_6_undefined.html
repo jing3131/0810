@@ -7,20 +7,20 @@
     <div id="debug"></div>
     
     <script>
-        "use strict";
+        "use strict";           // 使用嚴格模式(所有變數都需宣告var const let)
 
-        function showLocation () {
-            // console.log(this);  // undefined
-            debug.innerText = this.location;
-        } 
-        showLocation();  
-
-        // var showLocation = function () {
-        //     console.log(this);
+        // function showLocation () {
+        //     // console.log(this);  // undefined
         //     debug.innerText = this.location;
         // } 
-        // showLocation = showLocation.bind(window);
-        // showLocation();
+        // showLocation();  
+
+        var showLocation = function () {
+            console.log(this);
+            debug.innerText = this.location;
+        } 
+        showLocation = showLocation.bind(window);               // bind 把想綁定的東西(window)綁到this上
+        showLocation();
 
         // var showLocation = () => {
         //     console.log(this);

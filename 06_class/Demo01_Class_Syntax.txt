@@ -60,7 +60,7 @@
 		{"firstName":"Lionel", "lastName":"Messi"}
 	];
 
-	debug.innerText = JSON.stringify(objArray);
+	debug.innerText = JSON.stringify(objArray);         // JSON.stringify 子串化
 	// B: [{"firstName":"Derek","lastName":"Jeter"},{"firstName":"Jeremy","lastName":"Lin"},{"firstName":"Lionel","lastName":"Messi"}]
 
 </script>
@@ -76,7 +76,7 @@
 <script>
 
 	var s = '[{"firstName":"Derek","lastName":"Jeter"},{"firstName":"Jeremy","lastName":"Lin"},{"firstName":"Lionel","lastName":"Messi"}]';
-	var objArray = JSON.parse(s);
+	var objArray = JSON.parse(s);           // 將JOSN字串轉換成JavaScript的數值或物件
 	debug.innerHTML = objArray[2].lastName + "<br>";
 
 </script>

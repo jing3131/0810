@@ -12,6 +12,66 @@
 
     <script>
 
+        // let obj = new Object();
+        // obj = {};
+        // obj.lastName = "Last";
+        // obj.firstName = "First";
+        // obj.sayHello = function(){
+        //     debug.innerHTML = `Hi ${this.lastName} <br>`;
+        // } ;
+
+        // obj.sayHello();
+
+        class cAnimal {
+            constructor(value){
+                this.weight = 1;            // 呼叫get weight()
+                this.weight = value;        // set weight()
+            }
+            get weight(){
+                return this._weight;
+            }
+            set weight(value){
+                if(value>0)
+                    this._weight = value;
+            }
+            makeSound(){
+                alert("Aniaml: ...");
+            }
+            move(distance) {
+                alert(distance);
+            }
+        }
+
+        class Dog extends cAnimal{
+            constructor(weight, locationName) {
+                super(weight);                      // 先完成父類別的建構式
+                this.location = locationName;
+            }
+            makeSound(){
+                // super.makeSound();               // 呼叫父類別的function
+                alert("Dog: Wongzzz");
+            }
+            get location(){
+                return this._location;
+            }
+            set location(locationName){
+                this._location=locationName;
+            }
+        }
+
+        // let animalobj=new cAnimal(8);
+        // animalobj.makeSound();
+        // animalobj.move(7);     
+        // animalobj.weight = -30;
+        // alert(animalobj.weight.toString());
+        // animalobj.weight = 10;
+        // alert(animalobj.weight);
+        
+        let dog1=new Dog(7,"Tiachung");
+        dog1.makeSound();
+        alert(dog1.weight+","+dog1.location);
+
+
 
 
     </script>

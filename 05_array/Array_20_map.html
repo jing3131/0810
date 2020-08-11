@@ -27,6 +27,12 @@ test.onclick = function () {
     
     var dataList = [];
     
+    var dataList=data.map(function(items){            // function 可以省略成 =>  data.map((items) => {});
+        return items+10;                              // map 需要有一個新的容器(Array)裝
+    });                                               // 參數如果只有一個 可省不寫小括號  data.map(items => {});
+                                                      // 回傳值只有一行，可省略大括號、return (items => items + 10);
+
+    // var dataList1=data.map(items => <li>{{items}}</li>)     // -> JSX語法 將值return成 xml
 
     report.innerText = dataList.toString();
 

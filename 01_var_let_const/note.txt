@@ -27,3 +27,161 @@ var iImage=Math.floor(Math.random() * 10);
 
 let 只適用於{ }中
 var 的有效區域為整個function以下
+
+
+
+# JSON
+JSON.stringify(objArray);               // JSON.stringify 子串化
+var objArray = JSON.parse(s);           // 將JOSN字串轉換成JavaScript的數值或物件
+
+
+# function
+// function 可以省略成 =>  data.map((items) => {});
+// 參數如果只有一個 可省不寫小括號  data.map(items => {});
+// 回傳值只有一行，可省略大括號、return (items => items + 10);
+
+# Array
+
+             ----------
+shift    ->  |        |  <- pop,push
+unshift      ----------
+                 ^
+                splice(n,m,x...)
+
+.shift()                // 從前面移除
+.unshift(n)             // 在前面新增進去
+.pop();
+.push(4);
+.splice(n,m,x...)       // 從下標n的位置，刪除m個，後面的都是將新值放入
+                        // 如果不刪除任一值，就會在前面插入新值，將原有的往後擠
+
+debug.innerText=dataList.join("，");   // join -> 把一個陣列逐一用("")內的符號分隔
+
+
+- forEach
+data.forEach(function(items) {              // Array 使用 forEach 套用 function 至所有 data值(items)
+        console.log(items);                 // console.log() 除錯工具 -> 網頁開啟原始碼裡的主控台
+        sum += items;
+});
+
+- map    // 可對原本全部的內容進行更改，並組合成一個新的Array
+var dataList=data.map(function(items){            // map 需要有一個新的容器(Array)裝
+        return items+10;   
+});   
+
+// var dataList1=data.map(items => <li>{{items}}</li>)     // -> JSX語法 將值return成 xml                                               
+
+- filter
+var data1=data.filter(items => (items % 2 == 0));          // filter 濾出，把要的挑出來
+
+- concat    // 把兩個陣列內容合併成新的陣列
+var dataconcat=evenNumber.concat(oddNumber);        // 先排前面的陣列放前面
+var dataconcat=[...evenNumber,...oddNumber];        // ... -> 把所有陣列內容取出來
+// 兩者皆可合併成新的陣列
+
+- sort
+data.sort();            // 快速排序法
+
+data.sort(function (x, y) {
+    console.log(x, y);
+    if (x == 2)
+        return 1                // 不管y是多少，x都會比較大
+    else if (y == 2)
+        eturn -1                // 不管x是多少，y都會比較大
+    else
+        return x - y;
+});
+
+
+
+# class
+class test{
+    constructor() { this._weight }           // 建構式
+    get weight(){
+        return this._weight;                // 不直接呼叫 constructor 內的變數
+    }
+    set weight(value){
+        this._weight = value;    
+    }
+    makeSound() {}
+}
+class testA extends test{
+    constructor(weight, locationName){
+        super(weight);                      // 先完成父類別的建構式
+        this.location = locationName;
+    }
+    makeSound(){
+        super.makeSound();               // 呼叫父類別的function
+    }
+}
+
+let obj = new test();
+obj.weight;                             // 呼叫 get
+obj.weight = 3;                         // 使用 set
+
+
+# this
+1. this 指向「使用該函式的物件」
+function showFullName() {
+    debug.innerText = this.firstName + " " + this.lastName;
+}
+var chien = {
+    Name: "Wolfgang",
+    toString: showFullName              // 使用 function 作為 toString()
+}
+
+2. this -> 正在處理的事件的物件
+bubble phrase:                                                  // 由內而外     capture phrase: 捕捉階段 (由外而內)
+document.addEventListener("click", function (e) {               // onclick = on.click = addEventListener("",function(){})
+    debug.innerHTML += "document click (bubble): "
+    + "event.target.id: " + e.target.id + ", "
+    + "event.target.tagName: " + e.target.tagName + ", "
+    + "this id: " + this.id + ", "
+    + "this tagName: " + this.tagName   
+    + "<br>"
+}, false);
+
+3. 
+class Creature {
+    constructor(weightValue = 1) {
+        this.name = "cicada";
+    }
+    makeSound() {
+        console.log(this.name);         // 或是 const _this = this;   -> this會改變，就先將this儲存
+        setTimeout(() => {              // function(){}    ->    () =>  (Client) 使用function回頭呼叫父類別(Server)this
+            console.log(this.name);
+        }, 1000)
+    }
+}
+
+4. this 指向「全域物件(window, GLOBAL)」
+debug.innerText = this.location;        // 網址 = window.location
+
+5.
+"use strict";           // 使用嚴格模式(所有變數都需宣告var const let)
+var showLocation = function () {
+    debug.innerText = this.location;
+ } 
+showLocation = showLocation.bind(window);               // bind 把想綁定的東西(window)綁到this上
+showLocation();
+
+
+# module
+<body>
+    <div id="debug"></div>
+    <script type="module" src="./main.js">          // type="module"不能省
+    </script> 
+</body>
+
+- library.js
+export class Animal {                               // export 匯出(公開)        export default -> 為library主要類別
+    constructor(weightValue = 1) {
+        this.weight = weightValue;
+    }
+    makeSound() {
+        alert("Animal: ...");
+    }
+}
+
+- main.js
+import Dog, { playWith as play, Animal } from "./library.js";           // import {}... from ...  -> default 放{} 外面
