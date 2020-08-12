@@ -52,7 +52,14 @@
         //     $("#report").append("資料有缺<br>");
         //     return;
         // }
-        $("#report").append(mailAddress.toString() + "<br>");
+        
+        // if(mailAddress != undefined)
+        //     $("#report").append(mailAddress.toString() + "<br>");
+        if(typeof mailAddress === "undefined"){
+            $("#report").append(mailAddress.toString() + "<br>");
+            return;
+        }
+            
     }
     
     for (i = 0; i < mailList.length; i++) {

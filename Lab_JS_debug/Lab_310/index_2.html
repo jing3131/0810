@@ -47,9 +47,9 @@
         
         for (i = 1; i < upperValue; i++) {
             result = result + i;
-            // console.assert(
-            //     result != 45, 
-            //     "when i = " + i + ", we got wrong value.");
+            console.assert(                         // console.assert(boolean,"警示內容") -> 斷言false 則出現警示，但不進行停止程式
+                result != 45, 
+                "when i = " + i + ", we got wrong value.");
         }
 
         return result;

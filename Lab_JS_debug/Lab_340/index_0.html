@@ -53,9 +53,11 @@
     
     // debugger;
     
-    var report = "1 + 2 + 3 + ... + 10 = " + sum1ToN(n);
+    //var report = "1 + 2 + 3 + ... + 10 = " + sum1ToN(n);        // id = report  var = report ??? -> 會優先判定為變數
+    var ans = "1 + 2 + 3 + ... + 10 = " + sum1ToN(n);
     
-    report.innerHTML = report;
+    // report.innerHTML = ans;
+    document.getElementById("report").innerHTML= ans;
 
     </script>
 

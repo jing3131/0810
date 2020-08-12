@@ -38,8 +38,13 @@
         var i = 0;
         var arrayLength = source.length;
         for (i = 0; i < arrayLength; i++) {
-            source.splice(i, 1);
+            source.splice(i);          
+            // source.splice(i, 1);      // 從前面刪除，陣列會往前平移
+            // source.shift();
         }
+        // for (i = arrayLength-1; i >= 0; i--) {
+        //     source.splice(i, 1);
+        // }
     }
     
     var data = [0, 10, 20, 30, 40, 50, 60];

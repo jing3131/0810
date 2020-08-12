@@ -16,7 +16,7 @@ function sad(data, timeCount) {
 
 
 async function living() {
-    var promise1 = happy(200, 2000);
+    var promise1 = happy(200, 2000);                    // 幾乎達成多序執行
     var promise2 = sad(-100, 3000);
     var result1 = await promise1;
     var result2 = await promise2;

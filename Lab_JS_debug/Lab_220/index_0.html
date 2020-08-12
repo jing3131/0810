@@ -47,11 +47,22 @@
         "lionel.messi@gmail.com"
         ];
     
-    function sendMail(mailAddress) {
-        $("#report").append(mailAddress.toString() + "<br>");
+    function sendMail(mailAddress) {       
+        try{
+            $("#report").append(mailAddress.toString() + "<br>");
+        }
+        catch(e){
+            $("#report").append(mailAddress.toString() + "<br>");
+        }
     }
     
     for (i = 0; i < mailList.length; i++) {
+        // try{
+        //     sendMail(mailList[i]);
+        // }
+        // catch(e){
+        //     $("#report").append(mailAddress.toString() + "<br>");
+        // }
         sendMail(mailList[i]);
     }
     

@@ -40,12 +40,15 @@
 
     <script>
     
-    function displayTime {
+    function displayTime(c) {
         report.innerHTML = Date();
-        setInterval(displayTime(), 1000);
+        //setInterval(displayTime, 1000);     // 不加括號就是執行
+        setTimeout(displayTime,c,c);          
+        // displayTime,c -> displayTime(c) 
+        // displayTime,c,c -> displayTime(c),time
     
-    
-    displayTime;
+    }
+    displayTime(2000);      // 呼叫並傳參數進去
     
     
     </script>

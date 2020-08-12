@@ -47,6 +47,7 @@
         
         for (i = 1; i < upperValue; i++) {
             result = result + i;
+            if(result == 45) debugger;          // 將debugger 放在易出錯的地方
         }
 
         return result;
@@ -56,6 +57,8 @@
         var n = 10;
         
         // debugger;
+        // (左２)setp over: 正常速度執行程式到那一刻(不會進入副程式)
+        // (左３)set into遇到副程式就進去
         
         var answer = "1 + 2 + 3 + ... + 10 = " + sum1ToN(n);
         
